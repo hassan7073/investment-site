@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vantara — Grow Your Capital</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- DEMO BANNER -->
+<div class="demo-banner">
+  ⚠ DEMO UI ONLY — No real payments, accounts, or funds are processed on this site.
+</div>
+
+<!-- NAVBAR -->
+<header class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#home" class="logo">
+      <span class="logo-mark">V</span>
+      <span class="logo-text">Vantara</span>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#plans" class="nav-link">Investment Plans</a>
+      <a href="#deposit" class="nav-link">Deposit</a>
+      <a href="#withdraw" class="nav-link">Withdraw</a>
+      <a href="#dashboard" class="nav-link">Dashboard</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="btn btn-ghost" id="loginBtn">Log In</button>
+      <button class="btn btn-primary" id="signupBtn">Sign Up</button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg">
+    <div class="ticker-field" id="tickerField"></div>
+    <div class="hero-grid"></div>
+  </div>
+
+  <div class="hero-content">
+    <span class="eyebrow">Portfolio management &amp; growth plans</span>
+    <h1 class="hero-heading">
+      Put your capital<br>
+      <span class="text-accent">to work.</span>
+    </h1>
+    <p class="hero-desc">
+      Vantara allocates your deposit across structured, transparent plans designed
+      for steady daily returns. Track every gain in real time, from your first
+      deposit to your next withdrawal.
+    </p>
+    <a href="#plans" class="btn btn-primary btn-lg">Invest Now</a>
+
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="hero-stat-num" data-count="18400000">$0</span>
+        <span class="hero-stat-label">Distributed to investors</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num" data-count="24700">0</span>
+        <span class="hero-stat-label">Active investors</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num" data-count="99">0</span>
+        <span class="hero-stat-label">% uptime on payouts</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INVESTMENT PLANS -->
+<section class="section plans" id="plans">
+  <div class="section-head">
+    <span class="eyebrow">Plans</span>
+    <h2>Choose a plan that fits your strategy</h2>
+    <p class="section-sub">Every plan runs on the same transparent daily-payout engine. Scale up as your confidence — and capital — grows.</p>
+  </div>
+
+  <div class="plan-grid">
+
+    <article class="plan-card">
+      <div class="plan-tier">Basic</div>
+      <h3 class="plan-name">Starter</h3>
+      <div class="plan-rate"><span>0.8%</span> daily</div>
+      <ul class="plan-details">
+        <li><span>Minimum investment</span><strong>$100</strong></li>
+        <li><span>Duration</span><strong>30 days</strong></li>
+        <li><span>Total return</span><strong>~24%</strong></li>
+        <li><span>Payout</span><strong>Daily</strong></li>
+      </ul>
+      <button class="btn btn-outline invest-trigger" data-plan="Starter">Invest Now</button>
+    </article>
+
+    <article class="plan-card plan-featured">
+      <div class="plan-badge">Most Popular</div>
+      <div class="plan-tier">Premium</div>
+      <h3 class="plan-name">Momentum</h3>
+      <div class="plan-rate"><span>1.4%</span> daily</div>
+      <ul class="plan-details">
+        <li><span>Minimum investment</span><strong>$1,000</strong></li>
+        <li><span>Duration</span><strong>45 days</strong></li>
+        <li><span>Total return</span><strong>~63%</strong></li>
+        <li><span>Payout</span><strong>Daily</strong></li>
+      </ul>
+      <button class="btn btn-primary invest-trigger" data-plan="Momentum">Invest Now</button>
+    </article>
+
+    <article class="plan-card">
+      <div class="plan-tier">VIP</div>
+      <h3 class="plan-name">Apex</h3>
+      <div class="plan-rate"><span>2.1%</span> daily</div>
+      <ul class="plan-details">
+        <li><span>Minimum investment</span><strong>$5,000</strong></li>
+        <li><span>Duration</span><strong>60 days</strong></li>
+        <li><span>Total return</span><strong>~126%</strong></li>
+        <li><span>Payout</span><strong>Daily</strong></li>
+      </ul>
+      <button class="btn btn-outline invest-trigger" data-plan="Apex">Invest Now</button>
+    </article>
+
+  </div>
+</section>
+
+<!-- DEPOSIT -->
+<section class="section split-section" id="deposit">
+  <div class="section-head">
+    <span class="eyebrow">Fund your account</span>
+    <h2>Deposit</h2>
+    <p class="section-sub">Choose a method and confirm your deposit. Funds reflect in your dashboard once approved.</p>
+  </div>
+
+  <div class="split-grid">
+    <div class="panel">
+      <h3 class="panel-title">New Deposit</h3>
+      <form id="depositForm" class="form">
+        <label class="field">
+          <span>Amount (USD)</span>
+          <input type="number" min="10" step="1" placeholder="e.g. 500" id="depositAmount" required>
+        </label>
+
+        <span class="field-label">Payment method</span>
+        <div class="method-grid" id="depositMethods">
+          <label class="method-card">
+            <input type="radio" name="method" value="bkash" checked>
+            <span class="method-icon">📱</span>
+            <span>bKash</span>
+          </label>
+          <label class="method-card">
+            <input type="radio" name="method" value="nagad">
+            <span class="method-icon">💳</span>
+            <span>Nagad</span>
+          </label>
+          <label class="method-card">
+            <input type="radio" name="method" value="bank">
+            <span class="method-icon">🏦</span>
+            <span>Bank Transfer</span>
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Confirm Deposit</button>
+        <p class="form-note">This is a UI demo. No real transaction is sent or processed.</p>
+      </form>
+    </div>
+
+    <div class="panel">
+      <h3 class="panel-title">Deposit History</h3>
+      <div class="table-wrap">
+        <table class="data-table" id="depositTable">
+          <thead>
+            <tr><th>Date</th><th>Method</th><th>Amount</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Jun 28, 2026</td><td>bKash</td><td class="mono">$500.00</td><td><span class="badge badge-approved">Approved</span></td></tr>
+            <tr><td>Jun 21, 2026</td><td>Bank Transfer</td><td class="mono">$1,200.00</td><td><span class="badge badge-approved">Approved</span></td></tr>
+            <tr><td>Jun 14, 2026</td><td>Nagad</td><td class="mono">$250.00</td><td><span class="badge badge-pending">Pending</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WITHDRAW -->
+<section class="section split-section alt" id="withdraw">
+  <div class="section-head">
+    <span class="eyebrow">Cash out</span>
+    <h2>Withdraw</h2>
+    <p class="section-sub">Request a withdrawal to your linked wallet or bank account.</p>
+  </div>
+
+  <div class="split-grid">
+    <div class="panel">
+      <h3 class="panel-title">New Withdrawal</h3>
+      <form id="withdrawForm" class="form">
+        <label class="field">
+          <span>Amount (USD)</span>
+          <input type="number" min="10" step="1" placeholder="e.g. 300" id="withdrawAmount" required>
+        </label>
+        <label class="field">
+          <span>Wallet / Account number</span>
+          <input type="text" placeholder="e.g. 01XXXXXXXXX or bank IBAN" id="withdrawAccount" required>
+        </label>
+        <button type="submit" class="btn btn-primary btn-block">Request Withdrawal</button>
+        <p class="form-note">This is a UI demo. No real transaction is sent or processed.</p>
+      </form>
+    </div>
+
+    <div class="panel">
+      <h3 class="panel-title">Withdrawal History</h3>
+      <div class="table-wrap">
+        <table class="data-table" id="withdrawTable">
+          <thead>
+            <tr><th>Date</th><th>Account</th><th>Amount</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Jun 30, 2026</td><td>••••4821</td><td class="mono">$180.00</td><td><span class="badge badge-pending">Pending</span></td></tr>
+            <tr><td>Jun 19, 2026</td><td>••••9034</td><td class="mono">$420.00</td><td><span class="badge badge-approved">Approved</span></td></tr>
+            <tr><td>Jun 09, 2026</td><td>••••4821</td><td class="mono">$95.00</td><td><span class="badge badge-approved">Approved</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DASHBOARD -->
+<section class="section dashboard" id="dashboard">
+  <div class="section-head">
+    <span class="eyebrow">Overview</span>
+    <h2>Your Dashboard</h2>
+    <p class="section-sub">A live snapshot of your account activity.</p>
+  </div>
+
+  <div class="stat-grid">
+    <div class="stat-card">
+      <span class="stat-label">Total Balance</span>
+      <span class="stat-value mono">$4,182.60</span>
+      <span class="stat-trend up">▲ 3.2% this week</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-label">Active Investments</span>
+      <span class="stat-value mono">3</span>
+      <span class="stat-trend neutral">2 plans running</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-label">Total Earnings</span>
+      <span class="stat-value mono">$1,027.40</span>
+      <span class="stat-trend up">▲ all time</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-label">Referral Bonus</span>
+      <span class="stat-value mono">$85.00</span>
+      <span class="stat-trend neutral">4 referrals</span>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h3 class="panel-title">Recent Transactions</h3>
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr><th>Date</th><th>Type</th><th>Description</th><th>Amount</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Jun 30, 2026</td><td>Withdrawal</td><td>Requested payout</td><td class="mono neg">-$180.00</td><td><span class="badge badge-pending">Pending</span></td></tr>
+          <tr><td>Jun 29, 2026</td><td>Profit</td><td>Momentum plan payout</td><td class="mono pos">+$14.00</td><td><span class="badge badge-approved">Approved</span></td></tr>
+          <tr><td>Jun 28, 2026</td><td>Deposit</td><td>bKash deposit</td><td class="mono pos">+$500.00</td><td><span class="badge badge-approved">Approved</span></td></tr>
+          <tr><td>Jun 27, 2026</td><td>Referral</td><td>Bonus from referral</td><td class="mono pos">+$20.00</td><td><span class="badge badge-approved">Approved</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact" id="contact">
+  <div class="section-head">
+    <span class="eyebrow">Get in touch</span>
+    <h2>Have a question?</h2>
+    <p class="section-sub">Our support team responds within 24 hours.</p>
+  </div>
+  <div class="contact-grid">
+    <form class="panel form" id="contactForm">
+      <label class="field">
+        <span>Name</span>
+        <input type="text" placeholder="Your name" required>
+      </label>
+      <label class="field">
+        <span>Email</span>
+        <input type="email" placeholder="you@example.com" required>
+      </label>
+      <label class="field">
+        <span>Message</span>
+        <textarea rows="4" placeholder="How can we help?" required></textarea>
+      </label>
+      <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+    </form>
+    <div class="contact-info">
+      <div class="info-card">
+        <span class="info-icon">✉</span>
+        <div><strong>Email</strong><p>support@vantara-demo.example</p></div>
+      </div>
+      <div class="info-card">
+        <span class="info-icon">💬</span>
+        <div><strong>Live Chat</strong><p>Available 9am–9pm daily</p></div>
+      </div>
+      <div class="info-card">
+        <span class="info-icon">📍</span>
+        <div><strong>Office</strong><p>Demo Ave, Sample City</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <a href="#home" class="logo">
+        <span class="logo-mark">V</span>
+        <span class="logo-text">Vantara</span>
+      </a>
+      <p>A demo investment interface built with HTML, CSS &amp; JavaScript. Not a real financial product.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Platform</h4>
+      <a href="#plans">Investment Plans</a>
+      <a href="#deposit">Deposit</a>
+      <a href="#withdraw">Withdraw</a>
+      <a href="#dashboard">Dashboard</a>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <a href="#contact">Contact Us</a>
+      <a href="#">Help Center</a>
+      <a href="#">FAQs</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+    <div class="footer-col">
+      <h4>Stay updated</h4>
+      <p>Subscribe for product updates.</p>
+      <form class="newsletter">
+        <input type="email" placeholder="Email address">
+        <button type="submit" class="btn btn-primary">Join</button>
+      </form>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Vantara Demo. All rights reserved.</span>
+    <span>Built for demonstration purposes only.</span>
+  </div>
+</footer>
+
+<!-- AUTH MODAL -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <button class="modal-close" id="modalClose">×</button>
+    <h3 id="modalTitle">Log In</h3>
+    <form class="form" id="modalForm">
+      <label class="field">
+        <span>Email</span>
+        <input type="email" placeholder="you@example.com" required>
+      </label>
+      <label class="field">
+        <span>Password</span>
+        <input type="password" placeholder="••••••••" required>
+      </label>
+      <button type="submit" class="btn btn-primary btn-block">Continue</button>
+    </form>
+    <p class="modal-switch">
+      <span id="modalSwitchText">Don't have an account?</span>
+      <a href="#" id="modalSwitchLink">Sign up</a>
+    </p>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
